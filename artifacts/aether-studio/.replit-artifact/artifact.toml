@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Aether Studio"
+description = "A cinematic interactive 3D creative studio website with immersive motion, multi-page navigation, and a polished client-facing presentation."
+version = "1.0.0"
+id = "artifacts/aether-studio"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22559
+
+[services.development]
+run = "pnpm --filter @workspace/aether-studio run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/aether-studio", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/aether-studio/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22559"
+BASE_PATH = "/"
