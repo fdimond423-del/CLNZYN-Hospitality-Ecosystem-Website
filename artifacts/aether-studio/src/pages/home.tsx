@@ -54,7 +54,7 @@ export default function Home() {
         </Reveal>
         <Reveal delay={0.2} type="slide-left">
           <div style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-md)' }}>
-            <img src="/images/img7.jpeg" alt="CLNZYN Hospitality Ecosystem" style={{ width: '100%', height: 'auto', display: 'block' }} />
+            <img src={`${import.meta.env.BASE_URL}images/img7.jpeg`} alt="CLNZYN Hospitality Ecosystem" style={{ width: '100%', height: 'auto', display: 'block' }} />
           </div>
         </Reveal>
       </section>
@@ -76,7 +76,7 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.2} type="scale">
             <div style={{ position: 'relative', borderRadius: '20px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-md)' }}>
-              <img src="/images/img10.jpeg" alt="Motel Management Operations" style={{ width: '100%', height: 'auto', display: 'block' }} />
+              <img src={`${import.meta.env.BASE_URL}images/img10.jpeg`} alt="Motel Management Operations" style={{ width: '100%', height: 'auto', display: 'block' }} />
             </div>
           </Reveal>
         </div>
@@ -141,7 +141,7 @@ export default function Home() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', alignItems: 'center' }}>
           <Reveal type="slide-right">
             <div style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-md)' }}>
-              <img src="/images/img8.jpeg" alt="Motel Revenue Case Study" style={{ width: '100%', height: 'auto', display: 'block' }} />
+              <img src={`${import.meta.env.BASE_URL}images/img8.jpeg`} alt="Motel Revenue Case Study" style={{ width: '100%', height: 'auto', display: 'block' }} />
             </div>
           </Reveal>
           <Reveal>

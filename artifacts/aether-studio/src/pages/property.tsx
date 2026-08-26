@@ -52,7 +52,7 @@ export default function Property() {
         </Reveal>
         <Reveal delay={0.2}>
           <div style={{ position: 'relative', width: '100%', borderRadius: '16px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-md)' }}>
-            <img src="/images/img3.jpeg" alt="Motel Remodeling Projects" style={{ width: '100%', height: 'auto', display: 'block' }} />
+            <img src={`${import.meta.env.BASE_URL}images/img3.jpeg`} alt="Motel Remodeling Projects" style={{ width: '100%', height: 'auto', display: 'block' }} />
           </div>
         </Reveal>
       </section>
@@ -117,7 +117,7 @@ export default function Property() {
           </div>
           <Reveal delay={0.2} type="slide-right">
             <div style={{ position: 'relative', width: '100%', borderRadius: '16px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-md)' }}>
-              <img src="/images/img4.jpeg" alt="Motel Room Renovation Process" style={{ width: '100%', height: 'auto', display: 'block' }} />
+              <img src={`${import.meta.env.BASE_URL}images/img4.jpeg`} alt="Motel Room Renovation Process" style={{ width: '100%', height: 'auto', display: 'block' }} />
             </div>
           </Reveal>
         </div>

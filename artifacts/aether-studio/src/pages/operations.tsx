@@ -38,7 +38,7 @@ export default function Operations() {
         </Reveal>
         <Reveal delay={0.2}>
           <div style={{ position: 'relative', width: '100%', borderRadius: '16px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-md)' }}>
-            <img src="/images/img5.jpeg" alt="Motel Operations SOPs" style={{ width: '100%', height: 'auto', display: 'block' }} />
+            <img src={`${import.meta.env.BASE_URL}images/img5.jpeg`} alt="Motel Operations SOPs" style={{ width: '100%', height: 'auto', display: 'block' }} />
           </div>
         </Reveal>
       </section>
@@ -103,7 +103,7 @@ export default function Operations() {
           </div>
           <Reveal delay={0.2} type="slide-right">
             <div style={{ position: 'relative', width: '100%', borderRadius: '16px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-md)' }}>
-              <img src="/images/img6.jpeg" alt="Motel Restaurant Menu Planning" style={{ width: '100%', height: 'auto', display: 'block' }} />
+              <img src={`${import.meta.env.BASE_URL}images/img6.jpeg`} alt="Motel Restaurant Menu Planning" style={{ width: '100%', height: 'auto', display: 'block' }} />
             </div>
           </Reveal>
         </div>

@@ -27,7 +27,7 @@ export default function Vending() {
         </Reveal>
         <Reveal delay={0.2}>
           <div style={{ position: 'relative', width: '100%', borderRadius: '16px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-md)' }}>
-            <img src="/images/img12.jpeg" alt="Motel Vending Machines" style={{ width: '100%', height: 'auto', display: 'block' }} />
+            <img src={`${import.meta.env.BASE_URL}images/img12.jpeg`} alt="Motel Vending Machines" style={{ width: '100%', height: 'auto', display: 'block' }} />
           </div>
         </Reveal>
       </section>

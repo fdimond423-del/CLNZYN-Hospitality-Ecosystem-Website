@@ -107,7 +107,7 @@ function Brand() {
   return (
     <span className="brand-mark" data-testid="brand-clnzyn">
       <span className="brand-name" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-        <img src="/logo.jpeg" alt="CLNZYN Logo" style={{ width: '24px', height: '24px', borderRadius: '4px' }} />
+        <img src={`${import.meta.env.BASE_URL}logo.jpeg`} alt="CLNZYN Logo" style={{ width: '24px', height: '24px', borderRadius: '4px' }} />
         CLNZYN™
       </span>
     </span>
@@ -240,7 +240,7 @@ function Loader({ onComplete }: { onComplete: () => void }) {
               repeat: Infinity
             }}
           >
-            <img src="/logo.jpeg" alt="CLNZYN Logo" style={{ width: '135px', height: '135px', borderRadius: '16px', display: 'block' }} />
+            <img src={`${import.meta.env.BASE_URL}logo.jpeg`} alt="CLNZYN Logo" style={{ width: '135px', height: '135px', borderRadius: '16px', display: 'block' }} />
           </motion.div>
           
           {/* Sleek bottom loader bar */}

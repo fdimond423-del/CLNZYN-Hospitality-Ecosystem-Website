@@ -53,7 +53,7 @@ export default function Amenities() {
         </Reveal>
         <Reveal delay={0.2}>
           <div style={{ position: 'relative', width: '100%', borderRadius: '16px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-md)' }}>
-            <img src="/images/img1.jpeg" alt="Wholesale Motel Amenities" style={{ width: '100%', height: 'auto', display: 'block' }} />
+            <img src={`${import.meta.env.BASE_URL}images/img1.jpeg`} alt="Wholesale Motel Amenities" style={{ width: '100%', height: 'auto', display: 'block' }} />
           </div>
         </Reveal>
       </section>
@@ -155,7 +155,7 @@ export default function Amenities() {
               </Link>
             </div>
             <div style={{ position: 'relative', width: '100%', borderRadius: '12px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-md)' }}>
-              <img src="/images/img2.jpeg" alt="Motel Cleaning Supplies" style={{ width: '100%', height: 'auto', display: 'block' }} />
+              <img src={`${import.meta.env.BASE_URL}images/img2.jpeg`} alt="Motel Cleaning Supplies" style={{ width: '100%', height: 'auto', display: 'block' }} />
             </div>
           </div>
         </Reveal>

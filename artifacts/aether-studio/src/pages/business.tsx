@@ -73,7 +73,7 @@ export default function Business() {
         </Reveal>
         <Reveal delay={0.2} type="slide-left">
           <div style={{ position: 'relative', width: '100%', borderRadius: '16px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-md)' }}>
-            <img src="/images/img7.jpeg" alt="Global Business Service Brokerage" style={{ width: '100%', height: 'auto', display: 'block' }} />
+            <img src={`${import.meta.env.BASE_URL}images/img7.jpeg`} alt="Global Business Service Brokerage" style={{ width: '100%', height: 'auto', display: 'block' }} />
           </div>
         </Reveal>
       </section>
@@ -148,10 +148,10 @@ export default function Business() {
           </div>
           <Reveal delay={0.2} style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }} type="slide-right">
             <div style={{ position: 'relative', width: '100%', borderRadius: '16px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-md)' }}>
-              <img src="/images/img8.jpeg" alt="Motel Acquisitions valuation" style={{ width: '100%', height: 'auto', display: 'block' }} />
+              <img src={`${import.meta.env.BASE_URL}images/img8.jpeg`} alt="Motel Acquisitions valuation" style={{ width: '100%', height: 'auto', display: 'block' }} />
             </div>
             <div style={{ position: 'relative', width: '100%', borderRadius: '16px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-md)' }}>
-              <img src="/images/img9.jpeg" alt="Multi-business Ecosystem Growth" style={{ width: '100%', height: 'auto', display: 'block' }} />
+              <img src={`${import.meta.env.BASE_URL}images/img9.jpeg`} alt="Multi-business Ecosystem Growth" style={{ width: '100%', height: 'auto', display: 'block' }} />
             </div>
           </Reveal>
         </div>
