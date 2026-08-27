@@ -19,7 +19,7 @@ export default function Contact() {
       </section>
 
       <section className="page-wrap section" style={{ paddingTop: '5vh', paddingBottom: '10vh' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '3rem' }}>
           
           {/* Contact Info Column */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -42,7 +42,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="eyebrow" style={{ marginBottom: '0.4rem', color: 'hsl(var(--accent))' }}>Email Us</p>
-                  <a href="mailto:hello@clnzyn.com" style={{ fontSize: '1.25rem', fontWeight: 600, color: 'hsl(var(--foreground))', textDecoration: 'none' }}>hello@clnzyn.com</a>
+                  <a href="mailto:Oneworldtrade360@gmail.com" style={{ fontSize: '1.25rem', fontWeight: 600, color: 'hsl(var(--foreground))', textDecoration: 'none' }}>Oneworldtrade360@gmail.com</a>
                 </div>
               </div>
             </Reveal>
@@ -65,8 +65,8 @@ export default function Contact() {
                   <Phone size={22} />
                 </div>
                 <div>
-                  <p className="eyebrow" style={{ marginBottom: '0.4rem', color: 'hsl(var(--accent))' }}>Call Us</p>
-                  <a href="tel:+18005550199" style={{ fontSize: '1.25rem', fontWeight: 600, color: 'hsl(var(--foreground))', textDecoration: 'none' }}>1-800-555-0199</a>
+                  <p className="eyebrow" style={{ marginBottom: '0.4rem', color: 'hsl(var(--accent))' }}>WhatsApp / Call Us</p>
+                  <a href="https://wa.me/12722679492" target="_blank" rel="noopener noreferrer" style={{ fontSize: '1.25rem', fontWeight: 600, color: 'hsl(var(--foreground))', textDecoration: 'none' }}>272-267-9492</a>
                 </div>
               </div>
             </Reveal>
@@ -90,7 +90,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="eyebrow" style={{ marginBottom: '0.4rem', color: 'hsl(var(--accent))' }}>Headquarters</p>
-                  <p style={{ fontSize: '1.25rem', fontWeight: 600, color: 'hsl(var(--foreground))', margin: 0, lineHeight: 1.4 }}>New York, NY<br/>United States</p>
+                  <p style={{ fontSize: '1.25rem', fontWeight: 600, color: 'hsl(var(--foreground))', margin: 0, lineHeight: 1.4 }}>One Trade Venture LLC<br/><span style={{ fontSize: '1rem', color: 'hsl(var(--muted-foreground))' }}>680 Hazel St<br/>Wilkes-Barre, PA 18702</span></p>
                 </div>
               </div>
             </Reveal>
@@ -113,9 +113,11 @@ export default function Contact() {
 
           {/* Contact Form Column */}
           <Reveal delay={0.4}>
-            <form style={{ 
+            <form action="https://api.web3forms.com/submit" method="POST" style={{ 
               padding: '2.5rem', 
-              backgroundColor: 'hsl(var(--card))', 
+              backgroundColor: 'hsl(var(--card) / 0.85)', 
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
               border: '1px solid hsl(var(--border))',
               borderRadius: '20px',
               display: 'flex',
@@ -123,23 +125,28 @@ export default function Contact() {
               gap: '1.5rem',
               height: '100%',
               boxShadow: 'var(--shadow-md)'
-            }} onSubmit={(e) => { e.preventDefault(); alert('Inquiry sent successfully!'); }}>
+            }}>
+              
+              {/* Replace this with your actual Web3Forms access key */}
+              <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+              <input type="hidden" name="subject" value="New Inquiry from CLNZYN Website" />
+              <input type="hidden" name="redirect" value="https://web3forms.com/success" />
               
               <h2 style={{ fontSize: '1.6rem', fontWeight: 600, marginBottom: '0.5rem', color: 'hsl(var(--foreground))' }}>Send an Inquiry</h2>
               
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 <label style={{ fontSize: '0.9rem', color: 'hsl(var(--muted-foreground))', fontWeight: 500 }} htmlFor="name">Full Name</label>
-                <input id="name" type="text" placeholder="John Doe" required style={{ padding: '1rem', backgroundColor: 'hsl(var(--background))', border: '1px solid hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--foreground))', fontSize: '1rem', outline: 'none' }} />
+                <input id="name" name="name" type="text" placeholder="John Doe" required style={{ padding: '1rem', backgroundColor: 'hsl(var(--background))', border: '1px solid hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--foreground))', fontSize: '1rem', outline: 'none' }} />
               </div>
               
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 <label style={{ fontSize: '0.9rem', color: 'hsl(var(--muted-foreground))', fontWeight: 500 }} htmlFor="email">Email Address</label>
-                <input id="email" type="email" placeholder="john@example.com" required style={{ padding: '1rem', backgroundColor: 'hsl(var(--background))', border: '1px solid hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--foreground))', fontSize: '1rem', outline: 'none' }} />
+                <input id="email" name="email" type="email" placeholder="john@example.com" required style={{ padding: '1rem', backgroundColor: 'hsl(var(--background))', border: '1px solid hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--foreground))', fontSize: '1rem', outline: 'none' }} />
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 <label style={{ fontSize: '0.9rem', color: 'hsl(var(--muted-foreground))', fontWeight: 500 }} htmlFor="message">How can we help?</label>
-                <textarea id="message" rows={4} placeholder="Tell us about your property..." required style={{ padding: '1rem', backgroundColor: 'hsl(var(--background))', border: '1px solid hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--foreground))', fontSize: '1rem', resize: 'vertical', outline: 'none' }}></textarea>
+                <textarea id="message" name="message" rows={4} placeholder="Tell us about your property..." required style={{ padding: '1rem', backgroundColor: 'hsl(var(--background))', border: '1px solid hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--foreground))', fontSize: '1rem', resize: 'vertical', outline: 'none' }}></textarea>
               </div>
 
               <button type="submit" className="button-primary" style={{ marginTop: 'auto', width: '100%', justifyContent: 'center' }}>

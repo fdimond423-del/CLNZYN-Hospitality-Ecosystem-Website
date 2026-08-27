@@ -1,5 +1,5 @@
 import { ArrowRight, ArrowDownRight, Shield, Package, TrendingUp, LayoutGrid, HandPlatter, Building2, HelpCircle, CheckCircle2, ChevronDown } from 'lucide-react';
-import { Shell, Reveal, usePageMeta, AnimatedIcon } from '@/App';
+import { Shell, Reveal, usePageMeta, AnimatedIcon, StaggerContainer, StaggerItem } from '@/App';
 import { Link } from 'wouter';
 import { useState } from 'react';
 
@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <Shell>
       {/* Hero Section */}
-      <section className="page-wrap page-intro" style={{ minHeight: '80vh', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+      <section className="page-wrap page-intro" style={{ minHeight: '80vh', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '4rem', alignItems: 'center' }}>
         <Reveal>
           <p className="eyebrow" style={{ color: 'hsl(var(--accent))' }}>Welcome to CLNZYN™</p>
           <h1 className="display-xl" style={{ lineHeight: 1.1 }}>
@@ -53,32 +53,49 @@ export default function Home() {
           </div>
         </Reveal>
         <Reveal delay={0.2} type="slide-left">
-          <div style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-md)' }}>
-            <img src={`${import.meta.env.BASE_URL}images/img7.jpeg`} alt="CLNZYN Hospitality Ecosystem" style={{ width: '100%', height: 'auto', display: 'block' }} />
-          </div>
+            <img src={`${import.meta.env.BASE_URL}images/build-better.jpg`} alt="CLNZYN Hospitality Ecosystem" style={{ width: '100%', height: 'auto', display: 'block' }} />
         </Reveal>
       </section>
 
-      {/* Manifesto/Concept Section */}
-      <section className="page-wrap section" style={{ paddingTop: '8vh' }}>
-        <div className="manifesto" style={{ display: 'grid', gridTemplateColumns: '1.15fr 0.85fr', gap: '4rem', alignItems: 'center' }}>
-          <Reveal>
-            <div>
-              <p className="eyebrow" style={{ color: 'hsl(var(--accent))' }}>Our Integrated Concept</p>
-              <h2 className="display-md" style={{ marginTop: '1rem', marginBottom: '2rem' }}>Why manage twenty vendors when you can partner with one ecosystem?</h2>
-              <p style={{ fontSize: '1.15rem', color: 'hsl(var(--muted-foreground))', lineHeight: 1.8, marginBottom: '1.5rem' }}>
-                Owning a hospitality business is demanding. Between sourcing wholesale toiletries, managing building maintenance contractors, updating keycard door locks, and hiring front-desk staff, operators are pulled in every direction.
+      {/* Ecosystem Infographic Section */}
+      <section className="page-wrap section" style={{ paddingTop: '8vh', paddingBottom: '8vh' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '4rem', alignItems: 'start' }}>
+          
+          {/* Sticky Left: Infographic */}
+          <div style={{ position: 'sticky', top: '10vh', borderRadius: '24px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-lg)' }}>
+            <img src={`${import.meta.env.BASE_URL}images/ecosystem.jpg`} alt="Complete Motel Business Partner" style={{ width: '100%', height: 'auto', display: 'block' }} />
+          </div>
+
+          {/* Scrolling Right: Extracted Content */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+            <Reveal>
+              <p className="eyebrow" style={{ color: 'hsl(var(--accent))' }}>The Bigger Vision</p>
+              <h2 className="display-md" style={{ marginTop: '1rem' }}>Your Complete Motel Business Partner.</h2>
+              <p style={{ fontSize: '1.15rem', color: 'hsl(var(--muted-foreground))', lineHeight: 1.8, marginTop: '1.5rem' }}>
+                CLNZYN™ provides a complete ecosystem of hospitality products, property solutions, operational support, and business growth services for motel and hotel owners across the USA.
               </p>
-              <p style={{ fontSize: '1.15rem', color: 'hsl(var(--muted-foreground))', lineHeight: 1.8 }}>
-                CLNZYN™ coordinates all core motel needs. We build custom supply chains, renovate bathrooms, install HD camera systems, place vending machines, write housekeeping SOPs, and broker property transactions to build long-term value.
-              </p>
-            </div>
-          </Reveal>
-          <Reveal delay={0.2} type="scale">
-            <div style={{ position: 'relative', borderRadius: '20px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-md)' }}>
-              <img src={`${import.meta.env.BASE_URL}images/img10.jpeg`} alt="Motel Management Operations" style={{ width: '100%', height: 'auto', display: 'block' }} />
-            </div>
-          </Reveal>
+            </Reveal>
+
+            <StaggerContainer>
+              {[
+                { title: "01. Guest Amenities & Linens", desc: "Soap, Shampoo, Body Wash, Lotion, Dental Kits, Bed Sheets, Pillows, Towels, Guest Supplies." },
+                { title: "02. Cleaning & Housekeeping", desc: "Janitorial Supplies, Paper Products, Laundry Supplies, Disinfectants, Housekeeping Equipment." },
+                { title: "03. Security & Technology", desc: "Security Cameras, Smart Door Locks, Access Systems, Property Security, LED Lighting." },
+                { title: "04. Revenue Solutions", desc: "Snack & Beverage Vending, Coffee Stations, Guest Convenience Solutions." },
+                { title: "05. Furniture & Property Upgrades", desc: "Room Furniture, Beds, Mattresses, Lobby Furniture, Fixtures, Decor, LED Lighting." },
+                { title: "06. Design & Remodeling", desc: "Architecture, Interior Design, Room Renovation, Bathroom Remodeling, Exterior Upgrades, Construction Coordination." },
+                { title: "07. Property Services", desc: "Handyman, Repairs, Maintenance, Plumbing, Electrical Fixtures, Preventive Maintenance." },
+                { title: "08. Operations & Training", desc: "Staff Training, Housekeeping SOPs, Guest Service, Inventory, Cash Controls, Security Procedures." },
+                { title: "09. Restaurant & Food Solutions", desc: "Restaurant Concepts, Menu Development, Kitchen Planning, Food Programs, Coffee & Beverage Programs." },
+                { title: "10. Buy • Sell • Build • Grow", desc: "Motel, Hotel, C-Store, Gas Station, Laundromat, Restaurant, Beer & Liquor Store, Multi-business Properties." }
+              ].map((item, i) => (
+                <StaggerItem key={i} style={{ padding: '2rem', backgroundColor: 'hsl(var(--card))', borderRadius: '16px', border: '1px solid hsl(var(--border))', marginBottom: '1.5rem' }} className="bento-card-interactive">
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'hsl(var(--foreground))', marginBottom: '0.8rem' }}>{item.title}</h3>
+                  <p style={{ color: 'hsl(var(--muted-foreground))', lineHeight: 1.6 }}>{item.desc}</p>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
         </div>
       </section>
 
@@ -93,7 +110,7 @@ export default function Home() {
         
         <div className="solution-grid" style={{ 
           display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', 
+          gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))', 
           gap: '2rem', 
           marginTop: '3rem'
         }}>
@@ -138,10 +155,10 @@ export default function Home() {
 
       {/* Case Study Section (SEO Content Boost) */}
       <section className="page-wrap section" style={{ paddingTop: '12vh' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '4rem', alignItems: 'center' }}>
           <Reveal type="slide-right">
             <div style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-md)' }}>
-              <img src={`${import.meta.env.BASE_URL}images/img8.jpeg`} alt="Motel Revenue Case Study" style={{ width: '100%', height: 'auto', display: 'block' }} />
+              <img src={`${import.meta.env.BASE_URL}images/remodeling.jpg`} alt="Motel Revenue Case Study" style={{ width: '100%', height: 'auto', display: 'block' }} />
             </div>
           </Reveal>
           <Reveal>
@@ -231,7 +248,7 @@ export default function Home() {
           <div className="paper-panel" style={{ 
             padding: 'clamp(30px, 5vw, 60px)', 
             display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', 
             gap: '3rem', 
             alignItems: 'center', 
             backgroundColor: 'hsl(var(--card))', 

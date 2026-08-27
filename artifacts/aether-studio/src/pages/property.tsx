@@ -1,5 +1,5 @@
 import { Building2, ArrowDownRight, PaintBucket, Hammer, Wrench, BedDouble, Lightbulb, ShowerHead, Ruler, Brush, Home, Grid, ClipboardCheck, HardHat, Sofa, Archive, Frame } from 'lucide-react';
-import { Shell, Reveal, usePageMeta, AnimatedIcon } from '@/App';
+import { Shell, Reveal, usePageMeta, AnimatedIcon, StaggerContainer, StaggerItem } from '@/App';
 import { Link } from 'wouter';
 
 export default function Property() {
@@ -12,19 +12,6 @@ export default function Property() {
     { icon: Sofa, title: 'Lobby Furniture', desc: 'Comfortable, welcoming seating areas that impress guests upon arrival.' },
     { icon: Archive, title: 'Cabinets & Storage', desc: 'Functional storage solutions built to withstand heavy hotel usage.' },
     { icon: Frame, title: 'Décor & Accessories', desc: 'The finishing touches that turn a basic room into a premium experience.' }
-  ];
-
-  const remodelServices = [
-    { name: 'Architectural Planning', icon: Ruler },
-    { name: 'Interior Design', icon: Brush },
-    { name: 'Room Design', icon: Home },
-    { name: 'Bathroom Remodeling', icon: ShowerHead },
-    { name: 'Lobby Renovation', icon: Sofa },
-    { name: 'LED & Lighting Upgrades', icon: Lightbulb },
-    { name: 'Exterior Improvements', icon: Building2 },
-    { name: 'Full Remodel Projects', icon: Hammer },
-    { name: 'Project Coordination', icon: ClipboardCheck },
-    { name: 'Construction Oversight', icon: HardHat }
   ];
 
   const handymanServices = [
@@ -40,7 +27,7 @@ export default function Property() {
 
   return (
     <Shell>
-      <section className="page-wrap page-intro" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+      <section className="page-wrap page-intro" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '4rem', alignItems: 'center', minHeight: '60vh' }}>
         <Reveal>
           <p className="eyebrow" style={{ color: 'hsl(var(--accent))' }}>05 / Property Upgrades & Remodeling</p>
           <h1 className="display-lg">
@@ -49,16 +36,58 @@ export default function Property() {
           <p className="body-lg">
             From outdated to modern to marketable. We provide everything from new furniture to full architectural remodeling and everyday handyman services.
           </p>
+          <div style={{ marginTop: '2rem' }}>
+            <Link href="/contact" className="button-primary">
+              Discuss Your Property <ArrowDownRight size={16} />
+            </Link>
+          </div>
         </Reveal>
         <Reveal delay={0.2}>
           <div style={{ position: 'relative', width: '100%', borderRadius: '16px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-md)' }}>
-            <img src={`${import.meta.env.BASE_URL}images/img3.jpeg`} alt="Motel Remodeling Projects" style={{ width: '100%', height: 'auto', display: 'block' }} />
+            <img src={`${import.meta.env.BASE_URL}images/remodeling.jpg`} alt="Motel Remodeling Projects" style={{ width: '100%', height: 'auto', display: 'block' }} />
           </div>
         </Reveal>
       </section>
 
+      {/* Design & Remodeling Split Screen */}
+      <section className="page-wrap section" style={{ paddingTop: '8vh', paddingBottom: '8vh' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '4rem', alignItems: 'start' }}>
+          
+          <div style={{ position: 'sticky', top: '10vh', borderRadius: '24px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-lg)' }}>
+            <img src={`${import.meta.env.BASE_URL}images/remodeling.jpg`} alt="Design and Remodeling" style={{ width: '100%', height: 'auto', display: 'block' }} />
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+            <Reveal>
+              <p className="eyebrow" style={{ color: 'hsl(var(--accent))' }}>Design & Remodeling. Property Services.</p>
+              <h2 className="display-md" style={{ marginTop: '1rem' }}>Complete property transformation.</h2>
+              <p style={{ fontSize: '1.15rem', color: 'hsl(var(--muted-foreground))', lineHeight: 1.8, marginTop: '1.5rem' }}>
+                We handle everything from architecture and interior design to exterior upgrades and ongoing maintenance.
+              </p>
+            </Reveal>
+
+            <StaggerContainer>
+              {[
+                { title: "Architecture & Design", desc: "Custom architectural and interior design to elevate your property's appeal." },
+                { title: "Room Renovation", desc: "Complete guest room remodels including flooring, painting, and fixture upgrades." },
+                { title: "Bathroom Remodeling", desc: "Modern bathroom renovations with upgraded showers, vanities, and lighting." },
+                { title: "Exterior Upgrades", desc: "Facade improvements, landscaping, and exterior lighting to boost curb appeal." },
+                { title: "Construction Coordination", desc: "Seamless project management from demolition to final inspection." },
+                { title: "Preventive Maintenance", desc: "Scheduled property maintenance to prevent costly emergency repairs." },
+                { title: "Handyman & Repairs", desc: "On-call repair services for plumbing, electrical, and general fixes." }
+              ].map((item, i) => (
+                <StaggerItem key={i} style={{ padding: '2rem', backgroundColor: 'hsl(var(--card))', borderRadius: '16px', border: '1px solid hsl(var(--border))', marginBottom: '1.5rem' }} className="bento-card-interactive">
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'hsl(var(--foreground))', marginBottom: '0.8rem' }}>{item.title}</h3>
+                  <p style={{ color: 'hsl(var(--muted-foreground))', lineHeight: 1.6 }}>{item.desc}</p>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+        </div>
+      </section>
+
       {/* Furniture Section */}
-      <section className="page-wrap section" style={{ paddingTop: '5vh' }}>
+      <section className="page-wrap section" style={{ paddingTop: '10vh' }}>
         <Reveal className="section-header" type="slide-up">
           <>
             <p className="eyebrow"><AnimatedIcon icon={Building2} /> Furniture & Property Upgrades</p>
@@ -66,7 +95,7 @@ export default function Property() {
           </>
         </Reveal>
         
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginTop: '3rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '2rem', marginTop: '3rem' }}>
           {furnitureOptions.map((option, index) => (
             <Reveal key={option.title} delay={index * 0.05} type="scale">
               <div 
@@ -90,36 +119,6 @@ export default function Property() {
               </div>
             </Reveal>
           ))}
-        </div>
-      </section>
-
-      {/* Remodeling Services Section */}
-      <section className="page-wrap section" style={{ paddingTop: '10vh' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', alignItems: 'center' }}>
-          <div>
-            <Reveal className="section-header" style={{ marginBottom: '2rem' }} type="slide-up">
-              <>
-                <p className="eyebrow"><AnimatedIcon icon={PaintBucket} /> Design • Architecture • Remodeling</p>
-                <p>Planning to transform an outdated property? We provide commercial general contracting coordination.</p>
-              </>
-            </Reveal>
-            
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '1.2rem', marginTop: '3rem' }}>
-              {remodelServices.map((item, index) => (
-                <Reveal key={item.name} delay={index * 0.03} type="scale">
-                  <div className="feature-card">
-                    <AnimatedIcon icon={item.icon} delay={index * 0.03} />
-                    <strong>{item.name}</strong>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-          <Reveal delay={0.2} type="slide-right">
-            <div style={{ position: 'relative', width: '100%', borderRadius: '16px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-md)' }}>
-              <img src={`${import.meta.env.BASE_URL}images/img4.jpeg`} alt="Motel Room Renovation Process" style={{ width: '100%', height: 'auto', display: 'block' }} />
-            </div>
-          </Reveal>
         </div>
       </section>
 
@@ -153,7 +152,7 @@ export default function Property() {
           </>
         </Reveal>
         
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginTop: '3rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '2rem', marginTop: '3rem' }}>
           <Reveal type="scale" delay={0.1}>
             <div className="paper-panel" style={{ padding: '2rem', height: '100%', borderRadius: '16px' }}>
               <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>Increase Average Daily Rate (ADR)</h3>
@@ -184,7 +183,7 @@ export default function Property() {
       {/* Bottom Panel */}
       <section className="page-wrap section" style={{ paddingBottom: '10vh', paddingTop: '10vh' }}>
         <Reveal>
-          <div className="paper-panel" style={{ padding: 'clamp(30px, 5vw, 60px)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px', alignItems: 'center', backgroundColor: 'hsl(var(--card))', border: '1px solid hsl(var(--border))' }}>
+          <div className="paper-panel" style={{ padding: 'clamp(30px, 5vw, 60px)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '30px', alignItems: 'center', backgroundColor: 'hsl(var(--card))', border: '1px solid hsl(var(--border))' }}>
             <div>
               <p className="eyebrow" style={{ color: 'hsl(var(--accent))' }}>One Point of Coordination</p>
               <h2 className="display-md" style={{ marginTop: '1rem', color: 'hsl(var(--foreground))' }}>One property.<br/>One service network.</h2>

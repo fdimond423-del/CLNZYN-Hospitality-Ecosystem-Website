@@ -140,7 +140,7 @@
   width: calc(100% - 48px);
   max-width: 1100px;
   margin: 0 auto;
-  padding: 12px 32px;
+  padding: 12px clamp(12px, 3vw, 32px);
   background: hsl(var(--card) / 0.75);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -173,10 +173,12 @@
 .hairline { border-top: 1px solid hsl(var(--border)); }
 .coral { color: hsl(var(--accent)); }
 .paper-panel { 
-  background: hsl(var(--card)); 
+  background: hsl(var(--card) / 0.85); 
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid hsl(var(--border)); 
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.02);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
 }
 .button-primary, .button-quiet {
   display:inline-flex; align-items:center; justify-content:center; gap:12px; cursor:pointer; text-decoration:none;
@@ -256,7 +258,9 @@
 }
 .feature-card {
   padding: 1.4rem 1.6rem;
-  background-color: hsl(var(--card));
+  background-color: hsl(var(--card) / 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid hsl(var(--border));
   border-radius: 14px;
   display: flex;
@@ -295,10 +299,12 @@
   position:relative; 
   overflow:hidden; 
   min-height:510px; 
-  background: hsl(var(--card)); 
+  background: hsl(var(--card) / 0.85); 
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid hsl(var(--border));
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.01);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .project-card.small { min-height:370px; margin-top:0px; }
@@ -532,4 +538,70 @@ img:hover {
 @media (prefers-reduced-motion: reduce) {
   *,*::before,*::after { animation-duration:.001ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important; transition-duration:.001ms !important; }
   .reveal-line > * { transform:none; opacity:1; }
+}
+
+/* Mobile Overrides for Inline Split-Screen Layouts */
+@media (max-width: 1100px) {
+  .page-intro[style*="grid"], 
+  .section > div[style*="grid"] {
+    gap: 1.5rem !important;
+  }
+  
+  .section > div[style*="grid"] > div[style*="sticky"],
+  .page-intro > div > div[style*="sticky"] {
+    position: relative !important;
+    top: auto !important;
+    max-height: 50vh;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08) !important;
+  }
+  
+  .display-xl {
+    font-size: clamp(2.2rem, 10vw, 3.5rem) !important;
+    line-height: 1 !important;
+  }
+  
+  .display-lg {
+    font-size: clamp(2rem, 8vw, 2.8rem) !important;
+    line-height: 1.05 !important;
+  }
+  
+  .display-md {
+    font-size: clamp(1.6rem, 7vw, 2.2rem) !important;
+    line-height: 1.1 !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-wrap { padding: 0 16px !important; }
+  .section { padding: 40px 0 !important; }
+  .page-intro { padding: 80px 0 40px !important; }
+  
+  /* Force single column for smaller screens just in case */
+  .section > div[style*="grid"],
+  .page-intro[style*="grid"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  /* Prevent images from being too tall on small screens */
+  .section > div[style*="grid"] > div > img,
+  .page-intro > div > div > img {
+    max-height: 300px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 12px !important;
+  }
+
+  .bento-card-interactive {
+    padding: 1.25rem !important;
+    border-radius: 12px !important;
+  }
+
+  .button-primary {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 20px !important;
+    font-size: 13px !important;
+  }
 }

@@ -59,7 +59,7 @@ export function Reveal({
   duration?: number; 
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: '-8% 0px' });
+  const inView = useInView(ref, { once: false, margin: '0px 0px' });
   
   const variants = {
     'slide-up': { initial: { opacity: 0, y: 32 }, animate: { opacity: 1, y: 0 } },
@@ -78,7 +78,7 @@ export function Reveal({
       className={className}
       style={style}
       initial={selected.initial}
-      animate={inView ? selected.animate : {}}
+      animate={inView ? selected.animate : selected.initial}
       transition={{ duration, delay, ease: [0.16, 1, 0.3, 1] }}
     >
       {children}
@@ -86,14 +86,40 @@ export function Reveal({
   );
 }
 
+export function StaggerContainer({ children, className = '', style, delay = 0 }: { children: ReactNode, className?: string, style?: CSSProperties, delay?: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: false, margin: '0px 0px' });
+  const variants = {
+    hidden: {},
+    show: { transition: { staggerChildren: 0.1, delayChildren: delay } }
+  };
+  return (
+    <motion.div ref={ref} variants={variants} initial="hidden" animate={inView ? "show" : "hidden"} className={className} style={style}>
+      {children}
+    </motion.div>
+  );
+}
+
+export function StaggerItem({ children, className = '', style }: { children: ReactNode, className?: string, style?: CSSProperties }) {
+  const variants = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } }
+  };
+  return (
+    <motion.div variants={variants} className={className} style={style}>
+      {children}
+    </motion.div>
+  );
+}
+
 export function AnimatedIcon({ icon: Icon, delay = 0 }: { icon: any; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: '-5% 0px' });
+  const inView = useInView(ref, { once: false, margin: '0px 0px' });
   return (
     <motion.div
       ref={ref}
       initial={{ scale: 0.5, opacity: 0 }}
-      animate={inView ? { scale: 1, opacity: 1 } : {}}
+      animate={inView ? { scale: 1, opacity: 1 } : { scale: 0.5, opacity: 0 }}
       transition={{ duration: 0.5, delay: delay + 0.1, type: 'spring', stiffness: 200, damping: 10 }}
       whileHover={{ scale: 1.1, rotate: 5 }}
       style={{ display: 'inline-flex', padding: '8px', backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--primary))' }}
@@ -158,7 +184,7 @@ function Footer() {
         <div>CLNZYN / GLOBAL BUSINESS SERVICE /</div>
       </div>
       <footer className="page-wrap" style={{ padding: '8vh 0 4vh', display: 'flex', flexDirection: 'column', gap: '3rem' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2rem' }}>
           
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <Brand />
@@ -186,7 +212,7 @@ function Footer() {
 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', borderTop: '1px solid hsl(var(--border))', paddingTop: '2rem', fontSize: '0.9rem', color: 'hsl(var(--muted-foreground))' }}>
           <span>© {new Date().getFullYear()} CLNZYN™ Hospitality Ecosystem</span>
-          <a href="mailto:hello@clnzyn.com" data-testid="link-footer-email" style={{ color: 'inherit', textDecoration: 'none' }}>hello@clnzyn.com</a>
+          <a href="mailto:Oneworldtrade360@gmail.com" data-testid="link-footer-email" style={{ color: 'inherit', textDecoration: 'none' }}>Oneworldtrade360@gmail.com</a>
         </div>
       </footer>
     </>

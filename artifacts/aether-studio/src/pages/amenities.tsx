@@ -1,47 +1,14 @@
-import { BedDouble, Boxes, ArrowDownRight, Droplets, ShowerHead, Smile, CheckSquare, Sparkles, CupSoda, Coffee, Box, Gift, Search, Paperclip } from 'lucide-react';
-import { Shell, Reveal, usePageMeta, AnimatedIcon } from '@/App';
+import { ArrowDownRight, Droplets, ShowerHead, Smile, CheckSquare, Sparkles, CupSoda, Coffee, Box, Gift, BedDouble, Paperclip } from 'lucide-react';
+import { Shell, Reveal, usePageMeta, AnimatedIcon, StaggerContainer, StaggerItem } from '@/App';
 import { Link } from 'wouter';
 
 export default function Amenities() {
   usePageMeta('Wholesale Motel Amenities & Housekeeping Cleaning Supplies', 'CLNZYN™ provides complete guest-room supply programs, factory-direct hotel soap, linens, towels, and bulk cleaning products for hospitality operators.');
   
-  const guestAmenities = [
-    { name: 'Soap', icon: Droplets },
-    { name: 'Shampoo & Conditioner', icon: ShowerHead },
-    { name: 'Body Wash', icon: Droplets },
-    { name: 'Lotion', icon: Sparkles },
-    { name: 'Dental Kits', icon: Smile },
-    { name: 'Shaving Kits', icon: CheckSquare },
-    { name: 'Shower Caps', icon: ShowerHead },
-    { name: 'Combs', icon: Sparkles },
-    { name: 'Toilet Tissue', icon: Paperclip },
-    { name: 'Facial Tissue', icon: Box },
-    { name: 'Coffee & Tea Kits', icon: Coffee },
-    { name: 'Beverage Accessories', icon: CupSoda },
-    { name: 'Bed Sheets & Linens', icon: BedDouble },
-    { name: 'Pillows', icon: BedDouble },
-    { name: 'Mattress & Bedding Solutions', icon: BedDouble },
-    { name: 'Guest Slippers', icon: Box },
-    { name: 'Bathroom Essentials', icon: ShowerHead },
-    { name: 'Guest Welcome Kits', icon: Gift }
-  ];
-
-  const cleaningSupplies = [
-    { name: 'Cleaning Supplies', icon: Sparkles },
-    { name: 'Disinfectants', icon: Droplets },
-    { name: 'Housekeeping Equipment', icon: Boxes },
-    { name: 'Trash Bags', icon: Box },
-    { name: 'Laundry Supplies', icon: Sparkles },
-    { name: 'Paper Products', icon: Paperclip },
-    { name: 'Bathroom Cleaning Products', icon: ShowerHead },
-    { name: 'Janitorial Supplies', icon: CheckSquare },
-    { name: 'Housekeeping Consumables', icon: Box }
-  ];
-
   return (
     <Shell>
       {/* Intro Section */}
-      <section className="page-wrap page-intro" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+      <section className="page-wrap page-intro" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '4rem', alignItems: 'center', minHeight: '60vh' }}>
         <Reveal>
           <p className="eyebrow" style={{ color: 'hsl(var(--accent))' }}>02 / Room & Guest Amenities</p>
           <h1 className="display-lg">
@@ -50,101 +17,127 @@ export default function Amenities() {
           <p className="body-lg">
             Complete guest-room supply programs built for the reality of high turnover. We provide everything from everyday consumables to premium welcome kits, ensuring your rooms are always guest-ready.
           </p>
+          <div style={{ marginTop: '2rem' }}>
+            <Link href="/contact" className="button-primary">
+              Request Supply Catalog <ArrowDownRight size={16} />
+            </Link>
+          </div>
         </Reveal>
         <Reveal delay={0.2}>
           <div style={{ position: 'relative', width: '100%', borderRadius: '16px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-md)' }}>
-            <img src={`${import.meta.env.BASE_URL}images/img1.jpeg`} alt="Wholesale Motel Amenities" style={{ width: '100%', height: 'auto', display: 'block' }} />
+            <img src={`${import.meta.env.BASE_URL}images/supply-edge.jpg`} alt="Wholesale Motel Amenities" style={{ width: '100%', height: 'auto', display: 'block' }} />
           </div>
         </Reveal>
       </section>
 
-      {/* Guest Amenities Grid */}
-      <section className="page-wrap section" style={{ paddingTop: '5vh' }}>
-        <Reveal className="section-header" type="slide-up">
-          <>
-            <p className="eyebrow">
-              <AnimatedIcon icon={BedDouble} /> Room & Guest Amenities
-            </p>
-            <p>Every detail matters when creating the perfect guest experience.</p>
-          </>
-        </Reveal>
-        
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.2rem', marginTop: '3rem' }}>
-          {guestAmenities.map((item, index) => (
-            <Reveal key={item.name} delay={index * 0.03} type="scale">
-              <div className="feature-card">
-                <AnimatedIcon icon={item.icon} delay={index * 0.03} />
-                <strong>{item.name}</strong>
-              </div>
+      {/* Guest Amenities Split-Screen */}
+      <section className="page-wrap section" style={{ paddingTop: '8vh', paddingBottom: '8vh' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '4rem', alignItems: 'start' }}>
+          
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+            <Reveal>
+              <p className="eyebrow" style={{ color: 'hsl(var(--accent))' }}>The CLNZYN™ Supply Edge</p>
+              <h2 className="display-md" style={{ marginTop: '1rem' }}>Perfect Guest Experience.</h2>
+              <p style={{ fontSize: '1.15rem', color: 'hsl(var(--muted-foreground))', lineHeight: 1.8, marginTop: '1.5rem' }}>
+                Every detail matters. Premium guest supplies, quality linens, and cleaning solutions—delivered with care.
+              </p>
             </Reveal>
-          ))}
+
+            <StaggerContainer>
+              {[
+                { title: "Soap", desc: "Gentle, refreshing soaps in individual wraps and bulk sizes." },
+                { title: "Shampoo & Conditioner", desc: "Nourishing formulas in travel sizes or bulk refill options." },
+                { title: "Body Wash & Lotion", desc: "Invigorating body washes and moisturizing lotions to keep guests feeling pampered." },
+                { title: "Dental & Shaving Kits", desc: "Complete dental care kits and essential shaving kits for a comfortable stay." },
+                { title: "Shower Caps & Combs", desc: "Hygienic, individually packed shower caps and high-quality combs." },
+                { title: "More Guest Supplies", desc: "Toilet tissue, facial tissue, coffee & tea kits, beverage accessories, guest slippers, and bathroom essentials." }
+              ].map((item, i) => (
+                <StaggerItem key={i} style={{ padding: '2rem', backgroundColor: 'hsl(var(--card))', borderRadius: '16px', border: '1px solid hsl(var(--border))', marginBottom: '1.5rem' }} className="bento-card-interactive">
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'hsl(var(--foreground))', marginBottom: '0.8rem' }}>{item.title}</h3>
+                  <p style={{ color: 'hsl(var(--muted-foreground))', lineHeight: 1.6 }}>{item.desc}</p>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+
+          <div style={{ position: 'sticky', top: '10vh', borderRadius: '24px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-lg)' }}>
+            <img src={`${import.meta.env.BASE_URL}images/supply-edge.jpg`} alt="Guest Room Amenities" style={{ width: '100%', height: 'auto', display: 'block' }} />
+          </div>
+          
         </div>
       </section>
 
-      {/* Cleaning Supplies Grid */}
-      <section className="page-wrap section" style={{ paddingTop: '10vh' }}>
-        <Reveal className="section-header" type="slide-up">
-          <>
-            <p className="eyebrow">
-              <AnimatedIcon icon={Boxes} /> Cleaning & Housekeeping
-            </p>
-            <p>Keep your property guest-ready and operating efficiently with industrial cleaning products.</p>
-          </>
-        </Reveal>
-        
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.2rem', marginTop: '3rem' }}>
-          {cleaningSupplies.map((item, index) => (
-            <Reveal key={item.name} delay={index * 0.03} type="scale">
-              <div className="feature-card">
-                <AnimatedIcon icon={item.icon} delay={index * 0.03} />
-                <strong>{item.name}</strong>
-              </div>
+      {/* Linen Partner Split-Screen */}
+      <section className="page-wrap section" style={{ paddingTop: '8vh', paddingBottom: '8vh' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '4rem', alignItems: 'start' }}>
+          
+          <div style={{ position: 'sticky', top: '10vh', borderRadius: '24px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-lg)' }}>
+            <img src={`${import.meta.env.BASE_URL}images/hotel-linen.jpg`} alt="Hotel Linen Partner" style={{ width: '100%', height: 'auto', display: 'block' }} />
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+            <Reveal>
+              <p className="eyebrow" style={{ color: 'hsl(var(--accent))' }}>CLNZYN Hotel Linen</p>
+              <h2 className="display-md" style={{ marginTop: '1rem' }}>Your Linen Partner</h2>
+              <p style={{ fontSize: '1.15rem', color: 'hsl(var(--muted-foreground))', lineHeight: 1.8, marginTop: '1.5rem' }}>
+                Established with a vision to deliver premium quality linens to the hospitality industry with unmatched reliability and at affordable costs. Rooted in a legacy of trust spanning more than 25 years.
+              </p>
             </Reveal>
-          ))}
+
+            <StaggerContainer>
+              {[
+                { title: "Bed Linen", desc: "Bed Sheets (Plain & Stripe), Pillow Covers (Plain & Stripe), Duvet Covers." },
+                { title: "Bath Linen", desc: "Bath Towels, Hand Towels, Face Towels, Pool Towels, Bath Sheets, Bath Mats, Bath Robes, Spa Towels." },
+                { title: "Accessories", desc: "Duvets, Blankets, Mattress Toppers, Pillow Protectors (Terry), Pillows (HSD & Micro Fiber), Mattress Protectors." }
+              ].map((item, i) => (
+                <StaggerItem key={i} style={{ padding: '2rem', backgroundColor: 'hsl(var(--card))', borderRadius: '16px', border: '1px solid hsl(var(--border))', marginBottom: '1.5rem' }} className="bento-card-interactive">
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'hsl(var(--foreground))', marginBottom: '0.8rem' }}>{item.title}</h3>
+                  <p style={{ color: 'hsl(var(--muted-foreground))', lineHeight: 1.6 }}>{item.desc}</p>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
         </div>
       </section>
 
-      {/* Value Proposition Section (SEO Content Boost) */}
-      <section className="page-wrap section" style={{ paddingTop: '10vh' }}>
-        <Reveal className="section-header" type="slide-up">
-          <>
-            <p className="eyebrow"><AnimatedIcon icon={Sparkles} /> The CLNZYN™ Supply Edge</p>
-            <p>Why hospitality operators trust us for bulk guest supplies, soap, linens, and cleaning solutions.</p>
-          </>
-        </Reveal>
-        
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginTop: '3rem' }}>
-          <Reveal type="scale" delay={0.1}>
-            <div className="paper-panel" style={{ padding: '2rem', height: '100%', borderRadius: '16px' }}>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>Factory-Direct Wholesale Pricing</h3>
-              <p style={{ color: 'hsl(var(--muted-foreground))', lineHeight: 1.6, fontSize: '0.95rem' }}>
-                We bypass distributors by working directly with ISO-certified manufacturers in India. This allows motel owners to save up to 35% on essential room consumables, linens, and cleaning solutions without sacrificing quality.
+      {/* Bulk Supply Trust Section */}
+      <section className="page-wrap section" style={{ paddingTop: '8vh', paddingBottom: '8vh' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '4rem', alignItems: 'start' }}>
+          
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+            <Reveal>
+              <p className="eyebrow" style={{ color: 'hsl(var(--accent))' }}>The CLNZYN Supply Edge</p>
+              <h2 className="display-md" style={{ marginTop: '1rem' }}>Why operators trust us for bulk supplies.</h2>
+              <p style={{ fontSize: '1.15rem', color: 'hsl(var(--muted-foreground))', lineHeight: 1.8, marginTop: '1.5rem' }}>
+                We are your trusted partner for bulk supplies and cost-saving solutions, delivering premium quality on time.
               </p>
-            </div>
-          </Reveal>
-          <Reveal type="scale" delay={0.2}>
-            <div className="paper-panel" style={{ padding: '2rem', height: '100%', borderRadius: '16px' }}>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>Custom Branding & Design</h3>
-              <p style={{ color: 'hsl(var(--muted-foreground))', lineHeight: 1.6, fontSize: '0.95rem' }}>
-                Build guest loyalty by personalizing soap wrappers, shampoo bottles, and keycard sleeves with your property's logo. Our dedicated design team coordinates packaging artwork to align with your brand standards.
-              </p>
-            </div>
-          </Reveal>
-          <Reveal type="scale" delay={0.3}>
-            <div className="paper-panel" style={{ padding: '2rem', height: '100%', borderRadius: '16px' }}>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'hsl(var(--foreground))', marginBottom: '1rem' }}>Reliable Inventory Replenishment</h3>
-              <p style={{ color: 'hsl(var(--muted-foreground))', lineHeight: 1.6, fontSize: '0.95rem' }}>
-                Never run short of essential items. We offer scheduled replenishment cycles, auto-shipping, and localized warehousing options to ensure that guest supplies are delivered right before you run low.
-              </p>
-            </div>
-          </Reveal>
+            </Reveal>
+
+            <StaggerContainer>
+              {[
+                { title: "Factory-Direct Wholesale Pricing", desc: "We bypass distributors by working directly with ISO-certified manufacturers. This allows owners to save up to 35% on room consumables without sacrificing quality." },
+                { title: "Custom Branding & Design", desc: "Build guest loyalty by personalizing soap wrappers, shampoo bottles, and keycard sleeves with your property's logo. Our dedicated design team coordinates packaging artwork." },
+                { title: "Reliable Inventory Replenishment", desc: "Never run out of essential items. With efficient supply chain management, real-time tracking, and localized warehousing, we deliver right before you run low." }
+              ].map((item, i) => (
+                <StaggerItem key={i} style={{ padding: '2rem', backgroundColor: 'hsl(var(--card))', borderRadius: '16px', border: '1px solid hsl(var(--border))', marginBottom: '1.5rem' }} className="bento-card-interactive">
+                  <h3 style={{ fontSize: '1.25rem', fontWeight: 600, color: 'hsl(var(--foreground))', marginBottom: '0.8rem' }}>{item.title}</h3>
+                  <p style={{ color: 'hsl(var(--muted-foreground))', lineHeight: 1.6 }}>{item.desc}</p>
+                </StaggerItem>
+              ))}
+            </StaggerContainer>
+          </div>
+
+          <div style={{ position: 'sticky', top: '10vh', borderRadius: '24px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-lg)' }}>
+            <img src={`${import.meta.env.BASE_URL}images/bulk-supply.jpg`} alt="Bulk Supply Solutions" style={{ width: '100%', height: 'auto', display: 'block' }} />
+          </div>
+
         </div>
       </section>
 
       {/* CTA Bottom Section */}
       <section className="page-wrap section" style={{ paddingBottom: '10vh', paddingTop: '10vh' }}>
         <Reveal>
-          <div className="paper-panel" style={{ padding: 'clamp(30px, 5vw, 60px)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem', alignItems: 'center', backgroundColor: 'hsl(var(--card))', border: '1px solid hsl(var(--border))' }}>
+          <div className="paper-panel" style={{ padding: 'clamp(30px, 5vw, 60px)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '3rem', alignItems: 'center', backgroundColor: 'hsl(var(--card))', border: '1px solid hsl(var(--border))' }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
               <h2 className="display-md" style={{ marginBottom: '1.5rem', color: 'hsl(var(--foreground))' }}>Ready to upgrade your supplies?</h2>
               <p style={{ maxWidth: '600px', marginBottom: '2rem', color: 'hsl(var(--muted-foreground))', fontSize: '1.2rem' }}>
@@ -153,9 +146,6 @@ export default function Amenities() {
               <Link href="/contact" className="button-primary">
                 Contact our supply team <ArrowDownRight size={16} />
               </Link>
-            </div>
-            <div style={{ position: 'relative', width: '100%', borderRadius: '12px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-md)' }}>
-              <img src={`${import.meta.env.BASE_URL}images/img2.jpeg`} alt="Motel Cleaning Supplies" style={{ width: '100%', height: 'auto', display: 'block' }} />
             </div>
           </div>
         </Reveal>
