@@ -184,35 +184,35 @@ function Footer() {
         <div>CLNZYN / GLOBAL BUSINESS SERVICE /</div>
       </div>
       <footer className="page-wrap" style={{ padding: '8vh 0 4vh', display: 'flex', flexDirection: 'column', gap: '3rem' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2rem' }}>
+        <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2.5rem' }}>
           
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
             <Brand />
-            <p style={{ color: 'hsl(var(--muted-foreground))', fontSize: '0.9rem', lineHeight: 1.6, maxWidth: '280px' }}>
+            <p style={{ color: 'hsl(var(--muted-foreground))', fontSize: '0.95rem', lineHeight: 1.6, maxWidth: '280px' }}>
               More than motel amenities. Your complete motel business partner. From buying a motel to running it.
             </p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <h4 style={{ fontSize: '1.1rem', fontWeight: 600 }}>Ecosystem</h4>
-            <Link href="/amenities" style={{ color: 'hsl(var(--muted-foreground))', textDecoration: 'none' }}>Amenities & Supply</Link>
-            <Link href="/security" style={{ color: 'hsl(var(--muted-foreground))', textDecoration: 'none' }}>Security & Tech</Link>
-            <Link href="/vending" style={{ color: 'hsl(var(--muted-foreground))', textDecoration: 'none' }}>Vending Revenue</Link>
-            <Link href="/property" style={{ color: 'hsl(var(--muted-foreground))', textDecoration: 'none' }}>Property Upgrades</Link>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+            <h4 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '0.5rem' }}>Ecosystem</h4>
+            <Link href="/amenities" className="footer-link">Amenities & Supply</Link>
+            <Link href="/security" className="footer-link">Security & Tech</Link>
+            <Link href="/vending" className="footer-link">Vending Revenue</Link>
+            <Link href="/property" className="footer-link">Property Upgrades</Link>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <h4 style={{ fontSize: '1.1rem', fontWeight: 600 }}>Business Services</h4>
-            <Link href="/operations" style={{ color: 'hsl(var(--muted-foreground))', textDecoration: 'none' }}>Staff Operations</Link>
-            <Link href="/business" style={{ color: 'hsl(var(--muted-foreground))', textDecoration: 'none' }}>Buy, Sell, Grow</Link>
-            <Link href="/contact" style={{ color: 'hsl(var(--muted-foreground))', textDecoration: 'none' }}>Contact Us</Link>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+            <h4 style={{ fontSize: '1.1rem', fontWeight: 600, marginBottom: '0.5rem' }}>Business Services</h4>
+            <Link href="/operations" className="footer-link">Staff Operations</Link>
+            <Link href="/business" className="footer-link">Buy, Sell, Grow</Link>
+            <Link href="/contact" className="footer-link">Contact Us</Link>
           </div>
 
         </div>
 
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', borderTop: '1px solid hsl(var(--border))', paddingTop: '2rem', fontSize: '0.9rem', color: 'hsl(var(--muted-foreground))' }}>
+        <div className="footer-bottom" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem', borderTop: '1px solid hsl(var(--border))', paddingTop: '2rem', fontSize: '0.9rem', color: 'hsl(var(--muted-foreground))' }}>
           <span>© {new Date().getFullYear()} CLNZYN™ Hospitality Ecosystem</span>
-          <a href="mailto:Oneworldtrade360@gmail.com" data-testid="link-footer-email" style={{ color: 'inherit', textDecoration: 'none' }}>Oneworldtrade360@gmail.com</a>
+          <a href="mailto:Oneworldtrade360@gmail.com" data-testid="link-footer-email" className="footer-link">Oneworldtrade360@gmail.com</a>
         </div>
       </footer>
     </>

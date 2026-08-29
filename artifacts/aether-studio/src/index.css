@@ -77,10 +77,11 @@
 
 @layer base {
   * { @apply border-border; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: clip; width: 100vw; }
   body {
     @apply font-sans antialiased bg-background text-foreground;
-    overflow-x: hidden;
+    overflow-x: clip;
+    width: 100%;
   }
   button, a, input, textarea, select { font: inherit; }
   ::selection { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); }
@@ -106,6 +107,8 @@
   background: linear-gradient(135deg, #f2fcf9 0%, #e1f5f0 50%, #edfcf9 100%);
   background-size: 200% 200%;
   animation: mesh-drift 15s ease infinite;
+  overflow-x: clip;
+  width: 100%;
 }
 .site-shell::before {
   content: "";
@@ -384,6 +387,18 @@
 .marquee-word div { font:800 clamp(5rem, 18vw, 18rem)/.75 var(--app-font-display); letter-spacing:-.12em; color:transparent; -webkit-text-stroke:1px hsl(var(--foreground)); white-space:nowrap; animation:word-drift 24s linear infinite; }
 .footer { border-top:1px solid hsl(var(--foreground)); padding:32px 0 42px; display:flex; justify-content:space-between; gap:24px; font:11px var(--app-font-mono); text-transform:uppercase; }
 .footer a { color:inherit; }
+.footer-link {
+  color: hsl(var(--muted-foreground));
+  text-decoration: none;
+  padding: 6px 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+  width: fit-content;
+}
+.footer-link:hover {
+  color: hsl(var(--primary));
+  transform: translateX(4px);
+}
 .page-intro { padding:clamp(70px, 11vw, 150px) 0 100px; max-width:1100px; }
 .page-intro p { max-width:600px; margin:24px 0 0 0; }
 .studio-grid { display:grid; grid-template-columns:1fr 1.2fr; gap:9vw; }
@@ -516,8 +531,25 @@
   .flow-step:nth-child(2n) { border-right:0; }
   .flow-step:nth-child(n+3) { border-top:1px solid hsl(var(--border)); }
   .flow-step::after { display:none; }
-  .solution-grid { grid-template-columns:1fr 1fr; }
+  .solution-grid { grid-template-columns: 1fr 1fr; }
   .image-mosaic .tall-image { min-height:380px; }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 1rem !important;
+  }
+  .footer-link {
+    padding: 10px 0; /* Larger touch targets on mobile */
+  }
 }
 @media (max-width: 500px) {
   .solution-grid { grid-template-columns:1fr; }
@@ -577,31 +609,58 @@ img:hover {
   .section { padding: 40px 0 !important; }
   .page-intro { padding: 80px 0 40px !important; }
   
+  /* Typography overrides to fit within 320px */
+  .display-xl, .display-lg, .display-md {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .display-xl {
+    font-size: clamp(2rem, 12vw, 3rem) !important;
+  }
+  .display-lg {
+    font-size: clamp(1.8rem, 10vw, 2.5rem) !important;
+  }
+  .display-md {
+    font-size: clamp(1.5rem, 8vw, 2.2rem) !important;
+  }
+
   /* Force single column for smaller screens just in case */
   .section > div[style*="grid"],
-  .page-intro[style*="grid"] {
+  .page-intro[style*="grid"],
+  div[style*="gridTemplateColumns"] {
     grid-template-columns: 1fr !important;
-    gap: 1.5rem !important;
+    gap: 2rem !important;
+  }
+  
+  /* Header mobile styling */
+  .site-header {
+    width: auto !important;
+    left: 16px !important;
+    right: 16px !important;
+    transform: none !important;
+    border-radius: 20px !important;
+    padding: 12px 20px !important;
   }
   
   /* Prevent images from being too tall on small screens */
   .section > div[style*="grid"] > div > img,
   .page-intro > div > div > img {
-    max-height: 300px !important;
+    max-height: 350px !important;
     object-fit: cover !important;
     object-position: center !important;
     border-radius: 12px !important;
+    width: 100% !important;
   }
 
   .bento-card-interactive {
-    padding: 1.25rem !important;
+    padding: 1.5rem !important;
     border-radius: 12px !important;
   }
 
   .button-primary {
     width: 100%;
     justify-content: center;
-    padding: 14px 20px !important;
+    padding: 16px 20px !important;
     font-size: 13px !important;
   }
 }
