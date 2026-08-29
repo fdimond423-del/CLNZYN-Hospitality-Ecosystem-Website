@@ -642,12 +642,10 @@ img:hover {
     padding: 12px 20px !important;
   }
   
-  /* Prevent images from being too tall on small screens */
+  /* Prevent images from being cut off on small screens */
   .section > div[style*="grid"] > div > img,
   .page-intro > div > div > img {
-    max-height: 350px !important;
-    object-fit: cover !important;
-    object-position: center !important;
+    height: auto !important;
     border-radius: 12px !important;
     width: 100% !important;
   }

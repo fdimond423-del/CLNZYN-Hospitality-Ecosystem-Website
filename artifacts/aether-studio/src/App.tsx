@@ -103,7 +103,7 @@ export function StaggerContainer({ children, className = '', style, delay = 0 }:
 export function StaggerItem({ children, className = '', style }: { children: ReactNode, className?: string, style?: CSSProperties }) {
   const variants = {
     hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } }
+    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const } }
   };
   return (
     <motion.div variants={variants} className={className} style={style}>
@@ -180,9 +180,6 @@ function Header() {
 function Footer() {
   return (
     <>
-      <div className="marquee-word" aria-hidden="true" style={{ marginTop: '5vh', borderTop: '1px solid hsl(var(--border))' }}>
-        <div>CLNZYN / GLOBAL BUSINESS SERVICE /</div>
-      </div>
       <footer className="page-wrap" style={{ padding: '8vh 0 4vh', display: 'flex', flexDirection: 'column', gap: '3rem' }}>
         <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2.5rem' }}>
           
@@ -319,16 +316,11 @@ function Router() {
 }
 
 function App() {
-  const [loading, setLoading] = useState(true);
-  const finishLoading = () => {
-    setLoading(false);
-  };
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
           <Router />
-          {loading ? <Loader onComplete={finishLoading} /> : null}
         </WouterRouter>
         <Toaster />
       </TooltipProvider>
