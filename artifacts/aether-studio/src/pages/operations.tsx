@@ -14,7 +14,7 @@ export default function Operations() {
             TRAIN THE <span className="coral">TEAM.</span>
           </h1>
           <p className="body-lg">
-            A great property needs more than great rooms. We support operators with the systems, training, and standard operating procedures (SOPs) required to run a tight ship.
+            A premium property demands flawless execution. We equip operators with the advanced systems, elite training, and world-class standard operating procedures necessary to run an impeccable operation.
           </p>
           <div style={{ marginTop: '2rem' }}>
             <Link href="/contact" className="button-primary">
