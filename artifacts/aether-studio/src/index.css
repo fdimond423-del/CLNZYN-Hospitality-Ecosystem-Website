@@ -614,14 +614,26 @@ img:hover {
 }
 
 @media (max-width: 600px) {
-  .page-wrap { padding: 0 16px !important; }
+  .page-wrap { padding: 0 24px !important; }
   .section { padding: 40px 0 !important; }
   .page-intro { padding: 80px 0 40px !important; }
+  
+  /* Center text on mobile to avoid looking stuffed to the left */
+  .page-intro, .section-header, .hero-copy, .manifesto-copy {
+    text-align: center;
+    align-items: center !important;
+  }
+  .page-intro p, .section-header p, .hero-copy p, .manifesto-copy p {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+  }
   
   /* Typography overrides to fit within 320px */
   .display-xl, .display-lg, .display-md {
     word-break: break-word;
     overflow-wrap: break-word;
+    text-align: center;
   }
   .display-xl {
     font-size: clamp(2rem, 12vw, 3rem) !important;
@@ -638,7 +650,7 @@ img:hover {
   .page-intro[style*="grid"],
   div[style*="gridTemplateColumns"] {
     grid-template-columns: 1fr !important;
-    gap: 2rem !important;
+    gap: 2.5rem !important;
   }
   
   /* Header mobile styling */
