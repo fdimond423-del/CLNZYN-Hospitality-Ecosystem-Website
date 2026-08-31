@@ -113,7 +113,7 @@ export default function Contact() {
 
           {/* Contact Form Column */}
           <Reveal delay={0.4}>
-            <form action="https://api.web3forms.com/submit" method="POST" style={{ 
+            <form action="https://formsubmit.co/Oneworldtrade360@gmail.com" method="POST" style={{ 
               padding: '2.5rem', 
               backgroundColor: 'hsl(var(--card) / 0.85)', 
               backdropFilter: 'blur(20px)',
@@ -127,10 +127,9 @@ export default function Contact() {
               boxShadow: 'var(--shadow-md)'
             }}>
               
-              {/* Replace this with your actual Web3Forms access key */}
-              <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
-              <input type="hidden" name="subject" value="New Inquiry from CLNZYN Website" />
-              <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+              <input type="hidden" name="_subject" value="New Inquiry from CLNZYN Website" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="https://fdimond423-del.github.io/CLNZYN-Hospitality-Ecosystem-Website/" />
               
               <h2 style={{ fontSize: '1.6rem', fontWeight: 600, marginBottom: '0.5rem', color: 'hsl(var(--foreground))' }}>Send an Inquiry</h2>
               
