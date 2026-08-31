@@ -31,7 +31,7 @@ export default function Vending() {
 
       {/* Vending Split Screen */}
       <section className="page-wrap section" style={{ paddingTop: '8vh', paddingBottom: '8vh' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '4rem', alignItems: 'start' }}>
+        <div className="swap-order-mobile" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '4rem', alignItems: 'start' }}>
           
           <div style={{ position: 'sticky', top: '10vh', borderRadius: '24px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-lg)' }}>
             <img src={`${import.meta.env.BASE_URL}images/vending-solutions.jpg`} alt="Vending Solutions" style={{ width: '100%', height: 'auto', display: 'block' }} />
