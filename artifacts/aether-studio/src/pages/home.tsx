@@ -57,6 +57,29 @@ export default function Home() {
         </Reveal>
       </section>
 
+      {/* Motel 360 Promo Video */}
+      <section className="page-wrap section" style={{ paddingTop: '8vh', paddingBottom: '4vh' }}>
+        <Reveal>
+          <div className="paper-panel" style={{ padding: 'clamp(30px, 5vw, 60px)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))', gap: '3rem', alignItems: 'center' }}>
+            <div>
+              <p className="eyebrow" style={{ color: 'hsl(var(--accent))' }}>Motel 360 Overview</p>
+              <h2 className="display-md" style={{ marginTop: '1rem', color: 'hsl(var(--foreground))' }}>The complete motel ownership ecosystem.</h2>
+              <p style={{ color: 'hsl(var(--muted-foreground))', fontSize: '1.15rem', lineHeight: 1.6, marginTop: '1.5rem', marginBottom: '2rem' }}>
+                See how CLNZYN™ supports motel owners across the USA and Canada with premium amenities, bulk supplies, remodeling services, and business growth strategies in our Motel 360 program.
+              </p>
+            </div>
+            <div style={{ borderRadius: '24px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-lg)' }}>
+              <video 
+                src={`${import.meta.env.BASE_URL}images/motel-360-promo.mp4`} 
+                controls 
+                playsInline
+                style={{ width: '100%', height: 'auto', display: 'block', maxHeight: '70vh', objectFit: 'contain', backgroundColor: 'var(--card)' }} 
+              />
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
       {/* Ecosystem Infographic Section */}
       <section className="page-wrap section" style={{ paddingTop: '8vh', paddingBottom: '8vh' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '4rem', alignItems: 'start' }}>
@@ -150,6 +173,23 @@ export default function Home() {
               </Link>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      {/* Amenities Catalog Showcase */}
+      <section className="page-wrap section" style={{ paddingTop: '12vh', paddingBottom: '4vh' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '3rem' }}>
+          <Reveal className="section-header" type="slide-up">
+            <>
+              <p className="eyebrow">Wholesale Catalog</p>
+              <p>Direct Factory Pricing on Motel Amenities & Linens.</p>
+            </>
+          </Reveal>
+          <Reveal delay={0.2} type="scale">
+            <div style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-lg)', backgroundColor: 'white' }}>
+              <img src={`${import.meta.env.BASE_URL}images/amenities-catalog.jpeg`} alt="Motel Amenities and Linen Catalog" style={{ width: '100%', height: 'auto', display: 'block', maxHeight: '90vh', objectFit: 'contain' }} />
+            </div>
+          </Reveal>
         </div>
       </section>
 
