@@ -82,7 +82,7 @@ export default function Home() {
 
       {/* Ecosystem Infographic Section */}
       <section className="page-wrap section" style={{ paddingTop: '8vh', paddingBottom: '8vh' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '4rem', alignItems: 'start' }}>
+        <div className="swap-order-mobile" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '4rem', alignItems: 'start' }}>
           
           {/* Sticky Left: Infographic */}
           <div style={{ position: 'sticky', top: '10vh', borderRadius: '24px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-lg)' }}>
@@ -188,6 +188,16 @@ export default function Home() {
           <Reveal delay={0.2} type="scale">
             <div style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-lg)', maxWidth: '850px', margin: '0 auto', backgroundColor: 'var(--card)' }}>
               <img src={`${import.meta.env.BASE_URL}images/amenities-catalog.jpeg`} alt="Motel Amenities and Linen Catalog" style={{ width: '100%', height: 'auto', display: 'block' }} />
+            </div>
+          </Reveal>
+          <Reveal delay={0.3} type="slide-up">
+            <div style={{ maxWidth: '850px', margin: '0 auto', textAlign: 'center', marginTop: '1rem' }}>
+              <p style={{ color: 'hsl(var(--muted-foreground))', fontSize: '1.05rem', lineHeight: 1.6 }}>
+                Our wholesale catalog includes premium bed & bath linens, luxury guest amenities (soaps, shampoos, lotions, dental kits), and essential paper disposables. We supply independent motels with high-quality, eco-friendly products at reliable factory-direct pricing to elevate the guest experience and improve your bottom line.
+              </p>
+              <div style={{ marginTop: '1.5rem' }}>
+                 <Link href="/amenities" className="button-primary" style={{ display: 'inline-flex', width: 'auto' }}>View Full Amenities Program <ArrowRight size={16} /></Link>
+              </div>
             </div>
           </Reveal>
         </div>
