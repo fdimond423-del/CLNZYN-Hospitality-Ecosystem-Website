@@ -186,8 +186,8 @@ export default function Home() {
             </>
           </Reveal>
           <Reveal delay={0.2} type="scale">
-            <div style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-lg)', backgroundColor: 'white' }}>
-              <img src={`${import.meta.env.BASE_URL}images/amenities-catalog.jpeg`} alt="Motel Amenities and Linen Catalog" style={{ width: '100%', height: 'auto', display: 'block', maxHeight: '90vh', objectFit: 'contain' }} />
+            <div style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-lg)', maxWidth: '850px', margin: '0 auto', backgroundColor: 'var(--card)' }}>
+              <img src={`${import.meta.env.BASE_URL}images/amenities-catalog.jpeg`} alt="Motel Amenities and Linen Catalog" style={{ width: '100%', height: 'auto', display: 'block' }} />
             </div>
           </Reveal>
         </div>
