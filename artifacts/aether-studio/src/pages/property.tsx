@@ -44,7 +44,7 @@ export default function Property() {
         </Reveal>
         <Reveal delay={0.2}>
           <div style={{ position: 'relative', width: '100%', borderRadius: '16px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-md)' }}>
-            <img src={`${import.meta.env.BASE_URL}images/remodeling.jpg`} alt="Motel Remodeling Projects" style={{ width: '100%', height: 'auto', display: 'block' }} />
+            <img src={`${import.meta.env.BASE_URL}images/remodeling.png`} alt="Motel Remodeling Projects" style={{ width: '100%', height: 'auto', display: 'block' }} />
           </div>
         </Reveal>
       </section>
@@ -54,7 +54,7 @@ export default function Property() {
         <div className="swap-order-mobile" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '4rem', alignItems: 'start' }}>
           
           <div style={{ position: 'sticky', top: '10vh', borderRadius: '24px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-lg)' }}>
-            <img src={`${import.meta.env.BASE_URL}images/remodeling.jpg`} alt="Design and Remodeling" style={{ width: '100%', height: 'auto', display: 'block' }} />
+            <img src={`${import.meta.env.BASE_URL}images/remodeling.png`} alt="Design and Remodeling" style={{ width: '100%', height: 'auto', display: 'block' }} />
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>

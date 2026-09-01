@@ -207,7 +207,7 @@ export default function Home() {
         <div className="swap-order-mobile" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '4rem', alignItems: 'center' }}>
           <Reveal type="slide-right">
             <div style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-md)' }}>
-              <img src={`${import.meta.env.BASE_URL}images/remodeling.jpg`} alt="Motel Revenue Case Study" style={{ width: '100%', height: 'auto', display: 'block' }} />
+              <img src={`${import.meta.env.BASE_URL}images/remodeling.png`} alt="Motel Revenue Case Study" style={{ width: '100%', height: 'auto', display: 'block' }} />
             </div>
           </Reveal>
           <Reveal>
