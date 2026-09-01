@@ -167,6 +167,9 @@ importers:
       '@rollup/rollup-win32-x64-msvc':
         specifier: ^4.62.5
         version: 4.62.5
+      basic-ftp:
+        specifier: ^6.2.1
+        version: 6.2.1
       lightningcss-win32-x64-msvc:
         specifier: ^1.33.0
         version: 1.33.0
@@ -1480,6 +1483,10 @@ packages:
     resolution: {integrity: sha512-1iEmLEYSiE1SeBoAfPo/Mnx3PzfzHUkDK61ASkCpuk3YXugYLH5DYK1SzqV55F8FMI6s0F+/tCP7Polz1QRjxw==}
     engines: {node: '>=6.0.0'}
     hasBin: true
+
+  basic-ftp@6.2.1:
+    resolution: {integrity: sha512-bK67isD+lKq46AU8vNtjvMaT2ZqAOAmNCbxUHlFBRD4k15NWxyEjmaKtZPlgce58So4BNTjITGQOVTjL9y0ECA==}
+    engines: {node: '>=10.0.0'}
 
   brace-expansion@5.0.9:
     resolution: {integrity: sha512-ScQ4IuvIEF1TMlP7Zt+vjJ//9zlPb2SDcxWxM3bk8s6t6GGdJ7KO1dCcTidOPJKePW30LE/2cT7wCyPho9/Wxg==}
@@ -3642,6 +3649,8 @@ snapshots:
   balanced-match@4.0.4: {}
 
   baseline-browser-mapping@2.11.18: {}
+
+  basic-ftp@6.2.1: {}
 
   brace-expansion@5.0.9:
     dependencies:
