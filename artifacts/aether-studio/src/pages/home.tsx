@@ -178,34 +178,33 @@ export default function Home() {
 
       {/* Amenities Catalog Showcase */}
       <section className="page-wrap section" style={{ paddingTop: '12vh', paddingBottom: '4vh' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '3rem' }}>
-          <Reveal className="section-header" type="slide-up">
-            <>
-              <p className="eyebrow">Wholesale Catalog</p>
-              <p>Direct Factory Pricing on Motel Amenities & Linens.</p>
-            </>
-          </Reveal>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '4rem', alignItems: 'center' }}>
+          
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            <Reveal>
+              <p className="eyebrow" style={{ color: 'hsl(var(--accent))' }}>Wholesale Catalog</p>
+              <h2 className="display-md" style={{ marginTop: '0.5rem' }}>Direct Factory Pricing on Motel Amenities & Linens.</h2>
+              <p style={{ color: 'hsl(var(--muted-foreground))', fontSize: '1.15rem', lineHeight: 1.7, marginTop: '1.5rem' }}>
+                Our wholesale catalog includes premium bed & bath linens, luxury guest amenities (soaps, shampoos, lotions, dental kits), and essential paper disposables. We supply independent motels with high-quality, eco-friendly products at reliable factory-direct pricing to elevate the guest experience and improve your bottom line.
+              </p>
+              <div style={{ marginTop: '2rem' }}>
+                 <Link href="/amenities" className="button-primary" style={{ display: 'inline-flex', width: 'auto' }}>View Full Amenities Program <ArrowRight size={16} /></Link>
+              </div>
+            </Reveal>
+          </div>
+
           <Reveal delay={0.2} type="scale">
-            <div style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-lg)', maxWidth: '850px', margin: '0 auto', backgroundColor: 'var(--card)' }}>
+            <div style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-lg)', backgroundColor: 'var(--card)' }}>
               <img src={`${import.meta.env.BASE_URL}images/amenities-catalog.jpeg`} alt="Motel Amenities and Linen Catalog" style={{ width: '100%', height: 'auto', display: 'block' }} />
             </div>
           </Reveal>
-          <Reveal delay={0.3} type="slide-up">
-            <div style={{ maxWidth: '850px', margin: '0 auto', textAlign: 'center', marginTop: '1rem' }}>
-              <p style={{ color: 'hsl(var(--muted-foreground))', fontSize: '1.05rem', lineHeight: 1.6 }}>
-                Our wholesale catalog includes premium bed & bath linens, luxury guest amenities (soaps, shampoos, lotions, dental kits), and essential paper disposables. We supply independent motels with high-quality, eco-friendly products at reliable factory-direct pricing to elevate the guest experience and improve your bottom line.
-              </p>
-              <div style={{ marginTop: '1.5rem' }}>
-                 <Link href="/amenities" className="button-primary" style={{ display: 'inline-flex', width: 'auto' }}>View Full Amenities Program <ArrowRight size={16} /></Link>
-              </div>
-            </div>
-          </Reveal>
+
         </div>
       </section>
 
       {/* Case Study Section (SEO Content Boost) */}
       <section className="page-wrap section" style={{ paddingTop: '12vh' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '4rem', alignItems: 'center' }}>
+        <div className="swap-order-mobile" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '4rem', alignItems: 'center' }}>
           <Reveal type="slide-right">
             <div style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', border: '1px solid hsl(var(--border))', boxShadow: 'var(--shadow-md)' }}>
               <img src={`${import.meta.env.BASE_URL}images/remodeling.jpg`} alt="Motel Revenue Case Study" style={{ width: '100%', height: 'auto', display: 'block' }} />
