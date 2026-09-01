@@ -113,7 +113,7 @@ export default function Contact() {
 
           {/* Contact Form Column */}
           <Reveal delay={0.4}>
-            <form action="https://formsubmit.co/Oneworldtrade360@gmail.com" method="POST" style={{ 
+            <form action="https://formsubmit.co/Jpbussiness86@gmail.com" method="POST" style={{ 
               padding: '2.5rem', 
               backgroundColor: 'hsl(var(--card) / 0.85)', 
               backdropFilter: 'blur(20px)',
