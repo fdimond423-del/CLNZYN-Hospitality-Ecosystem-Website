@@ -673,7 +673,7 @@ img:hover {
   .page-wrap { padding: 0 20px !important; }
   
   /* Reduce excessive vertical padding on mobile to assemble tighter */
-  .section, [style*="paddingTop: 12vh"], [style*="paddingTop: 8vh"], [style*="paddingTop: 10vh"], [style*="paddingBottom: 10vh"], [style*="paddingBottom: 8vh"] {
+  .section, [style*="padding-top: 12vh"], [style*="padding-top: 8vh"], [style*="padding-top: 10vh"], [style*="padding-bottom: 10vh"], [style*="padding-bottom: 8vh"] {
     padding-top: 48px !important;
     padding-bottom: 48px !important;
   }
@@ -715,7 +715,7 @@ img:hover {
   /* Force single column for smaller screens just in case */
   .section > div[style*="grid"],
   .page-intro[style*="grid"],
-  div[style*="gridTemplateColumns"] {
+  div[style*="grid-template-columns"] {
     grid-template-columns: 1fr !important;
     gap: 2.5rem !important;
   }
