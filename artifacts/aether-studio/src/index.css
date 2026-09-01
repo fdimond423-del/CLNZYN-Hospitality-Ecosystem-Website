@@ -754,3 +754,5 @@ img:hover {
     font-size: 13px !important;
   }
 }
+.journey-card { grid-template-columns: 80px 140px 1fr; }
+@media (max-width: 600px) { .journey-card { grid-template-columns: 1fr; text-align: center; } }

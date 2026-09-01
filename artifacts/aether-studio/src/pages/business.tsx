@@ -99,9 +99,8 @@ export default function Business() {
         <div style={{ marginTop: '3rem', display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '900px', margin: '3rem auto 0 auto' }}>
           {journeySteps.map((step, index) => (
             <Reveal key={step.title} delay={index * 0.05}>
-              <div style={{ 
+              <div className="journey-card" style={{ 
                 display: 'grid', 
-                gridTemplateColumns: '80px 140px 1fr', 
                 gap: '2rem', 
                 alignItems: 'center',
                 padding: '1.5rem',
@@ -161,7 +160,7 @@ export default function Business() {
       {/* Bottom Panel */}
       <section className="page-wrap section" style={{ paddingBottom: '10vh', paddingTop: '10vh' }}>
         <Reveal>
-          <div className="paper-panel" style={{ padding: 'clamp(30px, 5vw, 60px)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', alignItems: 'center', backgroundColor: 'hsl(var(--card))', border: '1px solid hsl(var(--border))' }}>
+          <div className="paper-panel" style={{ padding: 'clamp(30px, 5vw, 60px)', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: '30px', alignItems: 'center', backgroundColor: 'hsl(var(--card))', border: '1px solid hsl(var(--border))' }}>
             <div>
               <p className="eyebrow" style={{ color: 'hsl(var(--accent))' }}>The Multi-Business Owner Ecosystem</p>
               <h2 className="display-md" style={{ marginTop: '1rem', color: 'hsl(var(--foreground))' }}>Connecting Business.<br/>Creating Wealth.</h2>
